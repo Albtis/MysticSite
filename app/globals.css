@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 280 50% 5%;
+    --foreground: 280 10% 98%;
+    --card: 280 50% 7%;
+    --card-foreground: 280 10% 98%;
+    --popover: 280 50% 5%;
+    --popover-foreground: 280 10% 98%;
+    --primary: 280 50% 50%;
+    --primary-foreground: 280 10% 98%;
+    --secondary: 280 30% 20%;
+    --secondary-foreground: 280 10% 98%;
+    --muted: 280 30% 20%;
+    --muted-foreground: 280 10% 70%;
+    --accent: 280 30% 20%;
+    --accent-foreground: 280 10% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 280 10% 98%;
+    --border: 280 30% 20%;
+    --input: 280 30% 20%;
+    --ring: 280 50% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500;
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 text-white;
+}
+
+/* Add smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Add glass effect */
+.glass-effect {
+  @apply bg-opacity-20 backdrop-blur-lg backdrop-filter;
+}
